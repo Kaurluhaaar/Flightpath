@@ -1,23 +1,32 @@
 <script setup>
 import { RouterLink, RouterView } from 'vue-router'
 import HelloWorld from '@/components/HelloWorld.vue'
+import axios from 'axios'
+import VueAxios from 'vue-axios'
+import { reactive, watch } from '@vue/runtime-core'
+const stuff = reactive({
+  data: {}
+})
+
+axios.get('https://api.fungenerators.com')
+.then(response => stuff.data = response.data)
+ .then((data) => {
+GET /fact/random
+ }
 </script>
 
 <template>
   <header>
+    {{ stuff}}
     <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
 
     <div class="wrapper">
-      <HelloWorld msg="You did it!" />
+      <HomeView msg="You did it!" />
 
-      <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
-      </nav>
+    
     </div>
   </header>
 
-  <RouterView />
 </template>
 
 <style>
