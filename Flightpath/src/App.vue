@@ -8,11 +8,10 @@ const stuff = reactive({
   data: {}
 })
 
-axios.get('https://api.fungenerators.com')
+axios.get('https://randomfox.ca/floof/?ref=apilist.fun')
 .then(response => stuff.data = response.data)
- .then((data) => {
-GET /fact/random
- }
+  
+
 </script>
 
 <template>
